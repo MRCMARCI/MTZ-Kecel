@@ -95,7 +95,7 @@ export const featuredProducts = [
 ];
 
 export const companyInfo = {
-  name: "MTZ Szerszám és Alkatrész Bolt",
+  name: "MTZ-Kecel",
   description: "Több mint 20 éves tapasztalattal rendelkező családi vállalkozás vagyunk, amely az ipari és háztartási szerszámok, munkaruházat és alkatrészek széles választékával várja ügyfeleit. Partnereink között megtalálhatók a legjelentősebb gyártók, mint például a Portwest, így mindig magas minőségű termékeket kínálunk.",
   mission: "Célunk, hogy ügyfeleink számára megbízható, minőségi termékeket és kiváló kiszolgálást nyújtsunk versenyképes árakon.",
   values: [

@@ -24,8 +24,8 @@ export const Header = () => {
               <Wrench className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">MTZ Szerszám</h1>
-              <p className="text-xs text-gray-600">Alkatrész Bolt</p>
+              <h1 className="text-xl font-bold text-gray-900">MTZ-Kecel</h1>
+              <p className="text-xs text-gray-600">Szerszám és Alkatrész</p>
             </div>
           </div>
 

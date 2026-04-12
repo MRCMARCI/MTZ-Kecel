@@ -23,8 +23,8 @@ export const Footer = () => {
                 <Wrench className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">MTZ Szerszám</h3>
-                <p className="text-sm text-gray-400">Alkatrész Bolt</p>
+                <h3 className="text-xl font-bold text-white">MTZ-Kecel</h3>
+                <p className="text-sm text-gray-400">Szerszám és Alkatrész</p>
               </div>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
@@ -110,7 +110,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © {currentYear} MTZ Szerszám és Alkatrész Bolt. Minden jog fenntartva.
+            © {currentYear} MTZ-Kecel. Minden jog fenntartva.
           </p>
         </div>
       </div>
