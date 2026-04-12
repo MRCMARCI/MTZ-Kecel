@@ -8,7 +8,21 @@ export const Footer = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Add visual feedback
+      element.style.transition = 'transform 0.3s ease-out';
+      element.style.transform = 'scale(1.01)';
+      setTimeout(() => {
+        element.style.transform = 'scale(1)';
+      }, 300);
     }
   };
 

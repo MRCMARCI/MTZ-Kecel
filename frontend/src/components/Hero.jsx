@@ -6,14 +6,42 @@ export const Hero = () => {
   const scrollToProducts = () => {
     const element = document.getElementById('products');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Add visual feedback
+      element.style.transition = 'transform 0.3s ease-out';
+      element.style.transform = 'scale(1.01)';
+      setTimeout(() => {
+        element.style.transform = 'scale(1)';
+      }, 300);
     }
   };
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Add visual feedback
+      element.style.transition = 'transform 0.3s ease-out';
+      element.style.transform = 'scale(1.01)';
+      setTimeout(() => {
+        element.style.transform = 'scale(1)';
+      }, 300);
     }
   };
 

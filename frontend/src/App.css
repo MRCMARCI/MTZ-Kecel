@@ -1,9 +1,15 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     overflow-x: hidden;
+}
+
+/* Smooth scroll animation for sections */
+section {
+    transition: transform 0.3s ease-out;
 }
 
 /* Custom scrollbar */
@@ -18,8 +24,15 @@ body {
 ::-webkit-scrollbar-thumb {
     background: #dc2626;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #b91c1c;
+}
+
+/* Smooth transitions */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
