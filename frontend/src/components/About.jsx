@@ -37,7 +37,7 @@ export const About = () => {
                 <div className="text-sm text-gray-600">Év a piacon</div>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <div className="text-3xl font-bold text-red-600 mb-1">8000+</div>
+                <div className="text-3xl font-bold text-red-600 mb-1">100+</div>
                 <div className="text-sm text-gray-600">Termék raktáron</div>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">

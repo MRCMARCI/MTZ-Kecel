@@ -108,7 +108,7 @@ export const Hero = () => {
               </div>
               <div>
                 <h3 className="text-white font-semibold">Széles választék</h3>
-                <p className="text-gray-300 text-sm">8000+ termék raktáron</p>
+                <p className="text-gray-300 text-sm">100+ termék raktáron</p>
               </div>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
