@@ -119,13 +119,17 @@ export const companyInfo = {
 };
 
 export const contactInfo = {
-  address: "1234 Budapest, Ipari utca 45.",
-  phone: "+36 1 234 5678",
-  mobile: "+36 30 123 4567",
-  email: "info@mtzszerszam.hu",
+  address: "6237 Kecel, Soltvadkerti u. 17.",
+  phone: "+36 78 422 700",
+  mobile: "+36 20 321 3055",
+  email: "beleczki.sandor@gmail.com",
   hours: {
-    weekday: "Hétfő - Péntek: 8:00 - 17:00",
-    saturday: "Szombat: 8:00 - 13:00",
-    sunday: "Vasárnap: Zárva"
+    monday: { day: "Hétfő", morning: "07:30 - 12:00", afternoon: "13:00 - 17:00" },
+    tuesday: { day: "Kedd", morning: "07:30 - 12:00", afternoon: "13:00 - 17:00" },
+    wednesday: { day: "Szerda", morning: "07:30 - 12:00", afternoon: "13:00 - 17:00" },
+    thursday: { day: "Csütörtök", morning: "07:30 - 12:00", afternoon: "13:00 - 17:00" },
+    friday: { day: "Péntek", morning: "07:30 - 12:00", afternoon: "13:00 - 17:00" },
+    saturday: { day: "Szombat", time: "07:30 - 12:00" },
+    sunday: { day: "Vasárnap", time: "Zárva" }
   }
 };

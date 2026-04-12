@@ -1,9 +1,8 @@
 import React from 'react';
-import { productCategories, featuredProducts } from '../mockData';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { productCategories } from '../mockData';
+import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 export const Products = () => {
   return (
@@ -21,7 +20,7 @@ export const Products = () => {
         </div>
 
         {/* Product Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {productCategories.map((category) => (
             <Card
               key={category.id}
@@ -51,50 +50,6 @@ export const Products = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Featured Products */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Kiemelt Termékek</h3>
-            <p className="text-lg text-gray-600">Legnépszerűbb termékeink</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <Card key={product.id} className="group hover:shadow-xl transition-all duration-300">
-                <CardHeader className="p-0">
-                  <div className="relative h-56 overflow-hidden rounded-t-lg">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <Badge className="absolute top-4 right-4 bg-red-600 text-white">
-                      {product.category}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <CardTitle className="text-lg mb-2">{product.name}</CardTitle>
-                  <ul className="space-y-1 mb-3">
-                    {product.features.map((feature, index) => (
-                      <li key={index} className="text-sm text-gray-600 flex items-center">
-                        <CheckCircle className="w-3 h-3 text-red-600 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-2xl font-bold text-red-600">{product.price}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
-                    Érdeklődöm
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
         </div>
       </div>
     </section>

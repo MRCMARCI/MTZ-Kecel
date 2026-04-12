@@ -55,12 +55,6 @@ export const Header = () => {
             >
               Kapcsolat
             </button>
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-red-600 hover:bg-red-700 text-white"
-            >
-              Ajánlatot kérek
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -99,14 +93,6 @@ export const Header = () => {
             >
               Kapcsolat
             </button>
-            <div className="px-4 pt-2">
-              <Button
-                onClick={() => scrollToSection('contact')}
-                className="w-full bg-red-600 hover:bg-red-700 text-white"
-              >
-                Ajánlatot kérek
-              </Button>
-            </div>
           </nav>
         )}
       </div>
