@@ -1,14 +1,12 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
 from typing import List
-import uuid
-from datetime import datetime, timezone
+from models import ProductCategoryItem, CompanyInfoItem, ContactInfoItem
 
 
 ROOT_DIR = Path(__file__).parent
@@ -26,45 +24,80 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
-# Define Models
-class StatusCheck(BaseModel):
-    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
-    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
-    client_name: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-
-class StatusCheckCreate(BaseModel):
-    client_name: str
-
-# Add your routes to the router instead of directly to app
+# Health check endpoint
 @api_router.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "MTZ-Kecel API is running"}
 
-@api_router.post("/status", response_model=StatusCheck)
-async def create_status_check(input: StatusCheckCreate):
-    status_dict = input.model_dump()
-    status_obj = StatusCheck(**status_dict)
-    
-    # Convert to dict and serialize datetime to ISO string for MongoDB
-    doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    
-    _ = await db.status_checks.insert_one(doc)
-    return status_obj
 
-@api_router.get("/status", response_model=List[StatusCheck])
-async def get_status_checks():
-    # Exclude MongoDB's _id field from the query results
-    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
-    # Convert ISO string timestamps back to datetime objects
-    for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
-    return status_checks
+# Product Categories endpoints
+@api_router.get("/categories", response_model=List[ProductCategoryItem])
+async def get_categories():
+    """Get all product categories"""
+    try:
+        categories = await db.product_categories.find().to_list(100)
+        # Convert MongoDB _id to string for JSON serialization
+        for cat in categories:
+            if '_id' in cat:
+                cat['_id'] = str(cat['_id'])
+        return categories
+    except Exception as e:
+        logging.error(f"Error fetching categories: {e}")
+        raise HTTPException(status_code=500, detail="Error fetching product categories")
+
+
+@api_router.get("/categories/{category_id}", response_model=ProductCategoryItem)
+async def get_category(category_id: int):
+    """Get a single product category by ID"""
+    try:
+        category = await db.product_categories.find_one({"id": category_id})
+        if not category:
+            raise HTTPException(status_code=404, detail="Category not found")
+        if '_id' in category:
+            category['_id'] = str(category['_id'])
+        return category
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Error fetching category {category_id}: {e}")
+        raise HTTPException(status_code=500, detail="Error fetching category")
+
+
+# Company Info endpoint
+@api_router.get("/company-info", response_model=CompanyInfoItem)
+async def get_company_info():
+    """Get company information"""
+    try:
+        company_info = await db.company_info.find_one()
+        if not company_info:
+            raise HTTPException(status_code=404, detail="Company info not found")
+        if '_id' in company_info:
+            company_info['_id'] = str(company_info['_id'])
+        return company_info
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Error fetching company info: {e}")
+        raise HTTPException(status_code=500, detail="Error fetching company info")
+
+
+# Contact Info endpoint
+@api_router.get("/contact-info", response_model=ContactInfoItem)
+async def get_contact_info():
+    """Get contact information"""
+    try:
+        contact_info = await db.contact_info.find_one()
+        if not contact_info:
+            raise HTTPException(status_code=404, detail="Contact info not found")
+        if '_id' in contact_info:
+            contact_info['_id'] = str(contact_info['_id'])
+        return contact_info
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Error fetching contact info: {e}")
+        raise HTTPException(status_code=500, detail="Error fetching contact info")
+
 
 # Include the router in the main app
 app.include_router(api_router)

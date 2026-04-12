@@ -1,10 +1,55 @@
-import React from 'react';
-import { contactInfo } from '../mockData';
+import React, { useState, useEffect } from 'react';
+import { apiService } from '../services/api';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export const Contact = () => {
+  const [contactInfo, setContactInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        setLoading(true);
+        const data = await apiService.getContactInfo();
+        setContactInfo(data);
+      } catch (err) {
+        setError('Nem sikerült betölteni a kapcsolati információkat');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl text-gray-600">Betöltés...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error || !contactInfo) {
+    return (
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl text-red-600">{error || 'Hiba történt'}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +65,7 @@ export const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-          {/* Address Card - Larger */}
+          {/* Address Card */}
           <Card className="lg:col-span-1 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-red-50 to-white">
             <CardContent className="p-8">
               <div className="flex flex-col items-center text-center">
@@ -38,11 +83,10 @@ export const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* Contact Details - Phone & Email */}
+          {/* Contact Details */}
           <Card className="lg:col-span-1 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-gray-50 to-white">
             <CardContent className="p-8">
               <div className="space-y-6">
-                {/* Phone */}
                 <div className="flex items-start space-x-4 pb-6 border-b border-gray-200">
                   <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                     <Phone className="w-7 h-7 text-white" />
@@ -64,7 +108,6 @@ export const Contact = () => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="flex items-start space-x-4">
                   <div className="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md">
                     <Mail className="w-7 h-7 text-white" />
@@ -83,7 +126,7 @@ export const Contact = () => {
             </CardContent>
           </Card>
 
-          {/* Opening Hours - Larger */}
+          {/* Opening Hours */}
           <Card className="lg:col-span-1 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-red-600 to-red-700 text-white">
             <CardContent className="p-8">
               <div className="flex flex-col h-full">

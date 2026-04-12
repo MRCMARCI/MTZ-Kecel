@@ -1,5 +1,5 @@
-import React from 'react';
-import { companyInfo } from '../mockData';
+import React, { useState, useEffect } from 'react';
+import { apiService } from '../services/api';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Award, Target, Users, TrendingUp } from 'lucide-react';
@@ -12,6 +12,51 @@ const iconMap = {
 };
 
 export const About = () => {
+  const [companyInfo, setCompanyInfo] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCompanyInfo = async () => {
+      try {
+        setLoading(true);
+        const data = await apiService.getCompanyInfo();
+        setCompanyInfo(data);
+      } catch (err) {
+        setError('Nem sikerült betölteni a céginformációkat');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCompanyInfo();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl text-gray-600">Betöltés...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error || !companyInfo) {
+    return (
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-xl text-red-600">{error || 'Hiba történt'}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
