@@ -24,7 +24,7 @@ export const productCategories = [
   },
   {
     id: 4,
-    name: "Csavarok & Rögzítők",
+    name: "Csavarok és anyák",
     description: "Megbízható kötőelemek minden alkalmazáshoz",
     image: "https://images.unsplash.com/photo-1607733067403-a0396fa4d3d0?w=800",
     items: ["Csavarok", "Anyák", "Alátétek", "Menetes rudak"]
