@@ -10,12 +10,12 @@ export const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-red-100 text-red-700 hover:bg-red-200">Kapcsolat</Badge>
+          <Badge className="mb-4 bg-red-100 text-red-700 hover:bg-red-200">Elérhetőségek</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Lépjen kapcsolatba velünk
+            Látogasson El Hozzánk
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Kérdése van? Szívesen segítünk! Látogasson el hozzánk vagy hívjon bizalommal.
+            Személyesen is szívesen látjuk! Szakértő munkatársaink várják Önt üzletünkben.
           </p>
         </div>
 
@@ -27,12 +27,12 @@ export const Contact = () => {
                 <div className="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Címünk</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Üzletünk Címe</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   {contactInfo.address}
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-200 w-full">
-                  <p className="text-sm text-gray-500">Könnyen megközelíthető</p>
+                  <p className="text-sm text-gray-500">Kecelen várjuk Önt!</p>
                 </div>
               </div>
             </CardContent>
@@ -48,7 +48,7 @@ export const Contact = () => {
                     <Phone className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Telefonszám</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Hívjon Minket</h3>
                     <a 
                       href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
                       className="block text-base text-gray-700 hover:text-red-600 transition-colors mb-1"
@@ -70,7 +70,7 @@ export const Contact = () => {
                     <Mail className="w-7 h-7 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Email cím</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">Írjon Nekünk</h3>
                     <a 
                       href={`mailto:${contactInfo.email}`}
                       className="text-base text-gray-700 hover:text-red-600 transition-colors break-all"
@@ -131,9 +131,9 @@ export const Contact = () => {
 
         {/* Bottom CTA Banner */}
         <div className="mt-12 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-center text-white shadow-xl">
-          <h3 className="text-2xl font-bold mb-2">Várjuk szeretettel!</h3>
+          <h3 className="text-2xl font-bold mb-2">Várjuk Szeretettel Üzletünkben!</h3>
           <p className="text-lg text-red-100">
-            Személyesen is meglátogathat minket üzletünkben, ahol szakértő kollégáink állnak rendelkezésére.
+            Látogasson el személyesen is, ahol tapasztalt munkatársaink professzionális tanácsadással segítik munkáját.
           </p>
         </div>
       </div>

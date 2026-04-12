@@ -4,58 +4,58 @@ export const productCategories = [
   {
     id: 1,
     name: "Munkaruházat",
-    description: "Portwest minőségi munkaruházat minden igényre",
+    description: "Prémium Portwest munkaruházat tartósságra tervezve",
     image: "https://images.unsplash.com/photo-1505582866941-6788e0205dd2?w=800",
-    items: ["Munkanadrág", "Kabátok", "Overálok", "Mellények"]
+    items: ["Munkanadrágok", "Munkakabátok", "Overálok", "Mellények"]
   },
   {
     id: 2,
-    name: "Munkacipők",
-    description: "Biztonságos és kényelmes munkavédelmi cipők",
+    name: "Munkavédelmi Cipők",
+    description: "Maximális védelem kényelemmel párosítva",
     image: "https://images.unsplash.com/photo-1581893260082-8f6953fe27dd?w=800",
-    items: ["Bakancsok", "Félcipők", "Gumicsizmák", "S3 védőcipők"]
+    items: ["Bakancsok", "Munkacipők", "Gumicsizmák", "S3 védőcipők"]
   },
   {
     id: 3,
-    name: "Kesztyűk",
-    description: "Védő- és munkakesztyűk minden munkához",
+    name: "Munkavédelmi Kesztyűk",
+    description: "Professzionális védelem minden munkafázishoz",
     image: "https://images.pexels.com/photos/9754819/pexels-photo-9754819.jpeg?w=800",
-    items: ["Bőrkesztyű", "Latexkesztyű", "Nitril kesztyű", "Vágásálló kesztyű"]
+    items: ["Bőrkesztyűk", "Latexkesztyűk", "Nitril kesztyűk", "Vágásálló"]
   },
   {
     id: 4,
-    name: "Csavarok & Anyák",
-    description: "Széles választék csavarok és rögzítőelemek",
+    name: "Csavarok & Rögzítők",
+    description: "Megbízható kötőelemek minden alkalmazáshoz",
     image: "https://images.unsplash.com/photo-1607733067403-a0396fa4d3d0?w=800",
-    items: ["Hatlapfejű csavarok", "Anyák", "Alátétek", "Menetes rudak"]
+    items: ["Csavarok", "Anyák", "Alátétek", "Menetes rudak"]
   },
   {
     id: 5,
-    name: "Olajok",
-    description: "Kenőanyagok és ipari olajok",
+    name: "Kenőanyagok",
+    description: "Minőségi olajok és kenőanyagok gépeihez",
     image: "https://images.unsplash.com/photo-1590880795696-20c7dfadacde?w=800",
-    items: ["Motor olaj", "Hidraulika olaj", "Váltó olaj", "Zsírok"]
+    items: ["Motor olajok", "Hidraulika olajok", "Váltó olajok", "Zsírok"]
   },
   {
     id: 6,
-    name: "Kardánok",
-    description: "Minőségi kardántengely alkatrészek",
+    name: "Kardántengely Alkatrészek",
+    description: "Eredeti minőségű kardántengely részegységek",
     image: "https://images.unsplash.com/photo-1707064892275-a3088e8240be?w=800",
-    items: ["Kardántengely", "Keresztcsuklók", "Tömítések", "Csapágyak"]
+    items: ["Kardántengelyek", "Keresztcsuklók", "Tömítések", "Csapágyak"]
   },
   {
     id: 7,
-    name: "Bilincsek",
-    description: "Tömlőbilincsek és rögzítő megoldások",
+    name: "Bilincsek & Szorítók",
+    description: "Precíz rögzítési megoldások szakembereknek",
     image: "https://images.unsplash.com/photo-1769971361807-1e3d025c2abb?w=800",
-    items: ["Tömlőbilincs", "Fémbilincs", "Spannbilincs", "Gyorsbilincs"]
+    items: ["Tömlőbilincsek", "Fémbilincsek", "Spannbilincsek", "Gyorsbilincsek"]
   },
   {
     id: 8,
-    name: "Portwest Termékek",
-    description: "Hivatalos Portwest márkatermékek",
+    name: "Portwest Védőfelszerelések",
+    description: "Hivatalos Portwest termékek raktárról",
     image: "https://images.pexels.com/photos/8488007/pexels-photo-8488007.jpeg?w=800",
-    items: ["Védőruházat", "Védőszemüveg", "Sisakok", "Hallásvédők"]
+    items: ["Védőruházat", "Védőszemüvegek", "Védősisakok", "Hallásvédők"]
   }
 ];
 
@@ -96,24 +96,24 @@ export const featuredProducts = [
 
 export const companyInfo = {
   name: "MTZ-Kecel",
-  description: "Több mint 20 éves tapasztalattal rendelkező családi vállalkozás vagyunk, amely az ipari és háztartási szerszámok, munkaruházat és alkatrészek széles választékával várja ügyfeleit. Partnereink között megtalálhatók a legjelentősebb gyártók, mint például a Portwest, így mindig magas minőségű termékeket kínálunk.",
-  mission: "Célunk, hogy ügyfeleink számára megbízható, minőségi termékeket és kiváló kiszolgálást nyújtsunk versenyképes árakon.",
+  description: "Kecelen, több mint 20 éve szolgáljuk ki vásárlóinkat minőségi szerszámokkal, munkaruházattal és ipari alkatrészekkel. Családi vállalkozásunk a megbízhatóság és szakértelem szimbóluma lett a régióban. Partnereink között olyan neves gyártókat találhatnak, mint a Portwest, így garantáljuk termékeinksz kiemelkedő minőségét.",
+  mission: "Célunk, hogy minden ügyfél megtalálja nálunk a munkájához szükséges eszközöket, versenyképes áron, kiemelkedő minőségben és szakértő tanácsadással.",
   values: [
     {
       title: "Minőség",
-      description: "Csak ellenőrzött, megbízható gyártóktól szerezzük be termékeinket"
+      description: "Csak ellenőrzött, megbízható gyártóktól kínálunk termékeket"
     },
     {
       title: "Megbízhatóság",
-      description: "20+ éve szolgáljuk ki ügyfeleinket folyamatos elérhetőséggel"
+      description: "20+ éve folyamatosan elérhetőek vagyunk vásárlóinknak"
     },
     {
       title: "Szakértelem",
-      description: "Szakképzett csapatunk segít a megfelelő termék kiválasztásában"
+      description: "Tapasztalt munkatársaink segítenek a helyes választásban"
     },
     {
       title: "Ár-érték arány",
-      description: "Versenyképes árak mellett kiváló minőséget biztosítunk"
+      description: "Kiemelkedő minőség mellett versenyképes áraink vannak"
     }
   ]
 };

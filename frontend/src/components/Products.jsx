@@ -10,12 +10,12 @@ export const Products = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <Badge className="mb-4 bg-red-100 text-red-700 hover:bg-red-200">Termékeink</Badge>
+          <Badge className="mb-4 bg-red-100 text-red-700 hover:bg-red-200">Kínálatunk</Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Széles Termékválaszték
+            Teljes Körű Termékpaletta
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Munkaruházattól az ipari alkatrészekig - minden egy helyen
+            Munkaruházattól az ipari alkatrészekig – mindent megtalál nálunk raktárról
           </p>
         </div>
 

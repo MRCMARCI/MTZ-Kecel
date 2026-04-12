@@ -28,8 +28,9 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Több mint 20 éve szolgáljuk ki ügyfeleinket minőségi szerszámokkal,
-              munkaruházattal és alkatrészekkel. Megbízható partner minden munkához.
+              Kecelen, több mint 20 éve szolgáljuk ki ügyfeleinket minőségi
+              szerszámokkal, munkaruházattal és alkatrészekkel. Megbízható partner
+              minden munkához.
             </p>
             <div className="flex space-x-4">
               <a

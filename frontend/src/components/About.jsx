@@ -34,14 +34,14 @@ export const About = () => {
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <div className="text-3xl font-bold text-red-600 mb-1">20+</div>
-                <div className="text-sm text-gray-600">Év tapasztalat</div>
+                <div className="text-sm text-gray-600">Év a piacon</div>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <div className="text-3xl font-bold text-red-600 mb-1">8+</div>
-                <div className="text-sm text-gray-600">Termékkategória</div>
+                <div className="text-3xl font-bold text-red-600 mb-1">8000+</div>
+                <div className="text-sm text-gray-600">Termék raktáron</div>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
-                <div className="text-3xl font-bold text-red-600 mb-1">1000+</div>
+                <div className="text-3xl font-bold text-red-600 mb-1">5000+</div>
                 <div className="text-sm text-gray-600">Elégedett ügyfél</div>
               </div>
             </div>
@@ -71,11 +71,11 @@ export const About = () => {
 
             {/* Partner Logo */}
             <div className="mt-8 p-6 bg-gray-50 rounded-lg text-center">
-              <p className="text-sm text-gray-600 mb-3">Hivatalos forgalmazó</p>
+              <p className="text-sm text-gray-600 mb-3">Hivatalos Portwest Partner</p>
               <div className="text-3xl font-bold text-gray-900">
                 PORTWEST
               </div>
-              <p className="text-sm text-gray-500 mt-2">és további vezető márkák</p>
+              <p className="text-sm text-gray-500 mt-2">és további vezető márkák képviseletében</p>
             </div>
           </div>
         </div>

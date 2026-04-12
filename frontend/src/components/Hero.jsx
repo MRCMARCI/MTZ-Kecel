@@ -38,11 +38,11 @@ export const Hero = () => {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Minőségi Szerszámok és Alkatrészek Szakembereknek
+            Professzionális Szerszámok és Alkatrészek Kecelen
           </h1>
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-            Munkaruházat, szerszámok, csavarok és minden ami a munkához kell.
-            Portwest hivatalos forgalmazó. Megbízható minőség, versenyképes árak.
+            Munkaruházattól az ipari alkatrészekig – minden egy helyen, raktárról azonnal!
+            Portwest hivatalos forgalmazó. Kiváló minőség, versenyképes árak, szakértő tanácsadás.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
@@ -71,7 +71,7 @@ export const Hero = () => {
               </div>
               <div>
                 <h3 className="text-white font-semibold">Ellenőrzött minőség</h3>
-                <p className="text-gray-300 text-sm">Csak megbízható márkák</p>
+                <p className="text-gray-300 text-sm">Csak prémium márkák</p>
               </div>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
@@ -80,7 +80,7 @@ export const Hero = () => {
               </div>
               <div>
                 <h3 className="text-white font-semibold">Széles választék</h3>
-                <p className="text-gray-300 text-sm">8+ termékkategória</p>
+                <p className="text-gray-300 text-sm">8000+ termék raktáron</p>
               </div>
             </div>
             <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
@@ -88,8 +88,8 @@ export const Hero = () => {
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-white font-semibold">Gyors kiszolgálás</h3>
-                <p className="text-gray-300 text-sm">Azonnali átvétel</p>
+                <h3 className="text-white font-semibold">Azonnali kiszolgálás</h3>
+                <p className="text-gray-300 text-sm">Raktárról, azonnal</p>
               </div>
             </div>
           </div>
